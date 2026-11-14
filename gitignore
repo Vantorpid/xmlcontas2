@@ -1,0 +1,21 @@
+# Dados reais: nunca versionar (têm CNPJ, valores e dados de terceiros)
+*.xml
+*.zip
+dados/
+# Exceção: XMLs de exemplo ANONIMIZADOS, nesta pasta
+!exemplos/*.xml
+
+# Segredos
+.env
+.env.*
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+
+# Sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/
+.venv/
+venv/
+__pycache__/
