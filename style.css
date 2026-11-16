@@ -64,3 +64,4 @@ tr.hoje .tag{color:var(--ac);border-color:var(--ac)}
 #drop{padding:40px 28px;text-align:center;cursor:pointer;border-style:dashed}
 #dropg{position:fixed;inset:16px;z-index:80;display:grid;place-items:center;font-size:22px;border:2px dashed var(--ac);background:rgba(255,122,26,.14);animation:abre .3s var(--mola) both}
 #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:70;padding:12px 18px;max-width:min(92vw,640px);cursor:pointer;animation:sobe .4s var(--mola) both}
+#menu a[aria-current=page]{background:rgba(255,122,26,.18)}

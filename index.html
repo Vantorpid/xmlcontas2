@@ -10,8 +10,9 @@
 <button id="burger" class="glass" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 <div id="veu" hidden></div>
 <nav id="menu" class="glass" hidden aria-label="Menu principal">
-  <a href="#notas" style="--i:0"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Notas</a>
-  <a href="#montador" style="--i:1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>Montador de XML</a>
+  <a href="#" style="--i:0"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Vencimentos</a>
+  <a href="#notas" style="--1:0"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Notas</a>
+  <a href="#montador" style="--2:1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>Montador de XML</a>
 </nav>
 
 <main>
@@ -25,7 +26,6 @@
   </section>
 
   <section id="v-notas" hidden>
-    <a class="voltar" href="#">← Vencimentos</a>
     <h1>Notas</h1>
     <p class="mut">Aqui você decide quem entra e quem sai do calendário. Descartar aqui não avisa a SEFAZ: o Desconhecimento continua sendo registrado no ERP.</p>
     <div class="wrap glass"><table>
@@ -38,7 +38,6 @@
   </section>
 
   <section id="v-montador" hidden>
-    <a class="voltar" href="#">← Vencimentos</a>
     <h1>Montador de XML</h1>
     <p class="mut">As notas importadas entram direto nos vencimentos. Você também pode soltar os XMLs em qualquer tela.</p>
     <div id="drop" class="glass" tabindex="0" role="button">Solte os XMLs aqui ou clique para escolher</div>
