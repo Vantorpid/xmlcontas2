@@ -135,7 +135,7 @@ const desenhar = () => { desenharHome(); desenharNotas(); };
 // Telas (a página é uma só, então os dados são compartilhados com segurança)
 function mostrar() {
   const v = location.hash.slice(1);
-  const alvo = ['notas', 'montador'].includes(v) ? v : 'home';
+  const alvo = ['notas', 'montador', 'precificacao'].includes(v) ? v : 'home';
   document.querySelectorAll('main section').forEach(s => { s.hidden = s.id !== 'v-' + alvo; });
   desenhar(); window.scrollTo(0, 0);
 }

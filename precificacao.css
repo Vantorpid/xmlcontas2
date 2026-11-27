@@ -1,0 +1,13 @@
+.zona{padding:34px 24px;text-align:center;cursor:pointer;border-style:dashed;margin-bottom:10px}
+.zona.on,.zona:focus-visible{border-color:var(--ac);outline:none;box-shadow:0 0 0 3px rgba(255,122,26,.35)}
+.zona small{color:var(--mut)}
+.ctl{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;padding:16px;margin:14px 0}
+.ctl label{display:grid;gap:4px;font-size:13px;color:var(--mut)}
+.ctl label.chkl{display:flex;align-items:center;gap:6px}
+.campo{font:inherit;color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:10px;padding:7px 10px;width:150px}
+.campo:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.campo.pct{width:68px;text-align:right;padding:4px 8px}
+.campo.sobre{border-color:var(--ac);background:rgba(255,122,26,.18)}
+#tp:not(.ver) .comp{display:none}
+#tp td:nth-child(2){white-space:normal;min-width:20px}
+#tp tfoot td{border-top:2px solid var(--line);border-bottom:0}
