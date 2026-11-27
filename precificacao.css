@@ -1,13 +1,56 @@
-.zona{padding:34px 24px;text-align:center;cursor:pointer;border-style:dashed;margin-bottom:10px}
-.zona.on,.zona:focus-visible{border-color:var(--ac);outline:none;box-shadow:0 0 0 3px rgba(255,122,26,.35)}
-.zona small{color:var(--mut)}
-.ctl{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;padding:16px;margin:14px 0}
-.ctl label{display:grid;gap:4px;font-size:13px;color:var(--mut)}
-.ctl label.chkl{display:flex;align-items:center;gap:6px}
-.campo{font:inherit;color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:10px;padding:7px 10px;width:150px}
-.campo:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
-.campo.pct{width:68px;text-align:right;padding:4px 8px}
-.campo.sobre{border-color:var(--ac);background:rgba(255,122,26,.18)}
-#tp:not(.ver) .comp{display:none}
-#tp td:nth-child(2){white-space:normal;min-width:20px}
-#tp tfoot td{border-top:2px solid var(--line);border-bottom:0}
+/* Exclusivo da tela Preços; preserva as demais telas. */
+main:has(> #v-precificacao:not([hidden])){max-width:none;width:100%;padding:76px clamp(12px,2vw,32px) 50px}
+#v-precificacao{min-width:0;--p-ac:#ff9a42}
+#v-precificacao h1{font-size:clamp(24px,2.2vw,34px);letter-spacing:-.035em;margin-bottom:6px}
+#v-precificacao .mut{font-size:13px;margin:0 0 14px;line-height:1.5}
+#v-precificacao .zona{padding:24px 16px;text-align:center;cursor:pointer;border:1px dashed rgba(255,154,66,.55);margin-bottom:12px;background:linear-gradient(135deg,rgba(255,122,26,.12),rgba(255,255,255,.035));color:var(--ink);font-weight:650}
+#v-precificacao .zona.on,#v-precificacao .zona:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+#v-precificacao .zona small{display:block;margin-top:5px;color:var(--mut);font-weight:400}
+#v-precificacao .ctl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:18px;margin:14px 0}
+#v-precificacao .ctl label{display:grid;gap:6px;font-size:12px;color:var(--mut);align-content:end;min-width:0}
+#v-precificacao .ctl .chkl{display:flex;align-items:center;gap:8px;grid-column:span 2;color:var(--ink)}
+#v-precificacao input[type=checkbox]{accent-color:var(--ac);width:17px;height:17px}
+#v-precificacao .ctl button{border-radius:10px;min-height:38px;white-space:normal}
+#v-precificacao .campo{font:inherit;color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:9px;padding:9px 10px;width:100%;min-width:0;max-width:100%;font-variant-numeric:tabular-nums}
+#v-precificacao .campo::placeholder{color:#c9bdb4;opacity:1}
+#v-precificacao .campo:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+#v-precificacao .campo.sobre{border-color:var(--ac);background:rgba(255,122,26,.14);color:#ffd1a6}
+#v-precificacao .p-resumo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+#v-precificacao .p-resumo>div{padding:14px 16px;min-width:0}
+#v-precificacao .p-resumo small{display:block;color:var(--mut);font-size:12px}
+#v-precificacao .p-resumo strong{display:block;font-size:clamp(16px,1.8vw,26px);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#v-precificacao .p-resumo>div:nth-child(2) strong{color:var(--p-ac)}
+#v-precificacao .p-tabela{width:100%;overflow:visible;min-width:0}
+#v-precificacao #tp{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:clamp(11px,.85vw,14px)}
+#tp th,#tp td{padding:11px 7px;white-space:normal;overflow-wrap:anywhere;vertical-align:middle;text-align:right;min-width:0;font-variant-numeric:tabular-nums}
+#tp th{font-size:12px;line-height:1.25;background:rgba(0,0,0,.26);color:#cfc0b5;font-weight:700}
+#tp th:first-child{border-top-left-radius:15px}#tp th:last-child{border-top-right-radius:15px}
+#tp .p-cod{width:8%;text-align:left;color:var(--mut)}#tp .p-cod small{display:block;font-size:10px;margin-top:4px}
+#tp .p-desc{width:22%;text-align:left;font-weight:600}#tp .p-qtd{width:7%}#tp .p-custo{width:9%}#tp .p-margem,#tp .p-markup{width:9%}#tp .p-preco{width:10%}#tp .p-total,#tp .p-lucro{width:9%}#tp .p-real{width:8%}
+#tp td.p-preco{background:rgba(255,122,26,.18);color:#ffb36e;font-weight:800;font-size:1.12em;border-left:1px solid rgba(255,122,26,.23);border-right:1px solid rgba(255,122,26,.23)}
+#tp th.p-preco{color:#1b0c02;background:#ff8a32}
+#tp .campo.pct{padding:7px 5px;text-align:right;font-size:inherit}
+#tp tbody tr:not(.comp):hover td:not(.p-preco){background:rgba(255,255,255,.045)}
+#tp:not(.ver) .comp{display:none!important}
+#tp .p-detalhe td{padding:8px 12px 14px;background:rgba(0,0,0,.22);text-align:left}
+#tp .p-composicao{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+#tp .p-composicao>div{padding:8px 10px;border:1px solid rgba(255,255,255,.09);border-radius:8px;background:rgba(255,255,255,.035);min-width:0}
+#tp .p-composicao small{display:block;color:var(--mut);font-size:11px;line-height:1.3}#tp .p-composicao strong{display:block;margin-top:3px;font-size:13px;color:var(--ink)}
+#v-precificacao .p-vazio{padding:32px 16px;text-align:center;color:var(--mut);margin:0}
+@media(max-width:900px){
+ #v-precificacao .ctl,#v-precificacao .p-resumo{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #tp thead{display:none}#tp,#tp tbody{display:block}#tp tbody tr:not(.comp){display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:12px;border-bottom:1px solid var(--line)}
+ #tp tbody tr:not(.comp)>td{display:block;width:auto!important;text-align:left;border:0;padding:5px;min-width:0}
+ #tp tbody tr:not(.comp)>td::before{content:attr(data-label);display:block;color:var(--mut);font-size:11px;font-weight:400;margin-bottom:4px}
+ #tp .p-desc{grid-column:span 3}#tp .p-cod{grid-column:span 1}#tp td.p-preco{border-radius:8px}
+ #tp .p-detalhe,#tp .p-detalhe td{display:block;width:100%}#tp .p-composicao{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){#v-precificacao .ctl{padding:12px;gap:10px}#tp tbody tr:not(.comp){grid-template-columns:repeat(2,minmax(0,1fr))}#tp .p-desc{grid-column:span 2}#tp .p-cod{grid-column:span 2}}
+
+/* Sinalização fiscal discreta e acessível, sem alterar o cálculo. */
+#v-precificacao .p-alerta-fiscal{margin:12px 0 16px;padding:15px 18px;border:1px solid #ff5a4d;border-left:4px solid #ff5a4d;border-radius:12px;background:rgba(255,70,60,.10);color:#ffd4cf;overflow-wrap:anywhere}
+#v-precificacao .p-alerta-fiscal strong{display:block;color:#ff8a80;font-size:15px}
+#v-precificacao .p-alerta-fiscal p{margin:6px 0 8px;font-size:13px;line-height:1.5}
+#v-precificacao .p-alerta-fiscal summary{cursor:pointer;font-size:13px;font-weight:600}
+#v-precificacao .p-alerta-fiscal ul{margin:8px 0 0;padding-left:20px;font-size:12px}
+#tp .p-flag-fiscal{display:block;color:#ff8a80;font-size:11px;font-weight:600;margin-top:5px}
